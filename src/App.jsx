@@ -20,8 +20,8 @@ function App() {
 
   const loadStudents = () => {
     let url = search
-      ? `http://localhost:8080/students/search?name=${search}&page=${currentPage}&size=${pageSize}`
-      : `http://localhost:8080/students?page=${currentPage}&size=${pageSize}`;
+      ? `https://studentmanagementsystem-backend-mxhw.onrender.com/students/search?name=${search}&page=${currentPage}&size=${pageSize}`
+      : `https://studentmanagementsystem-backend-mxhw.onrender.com/students?page=${currentPage}&size=${pageSize}`;
 
     fetch(url)
       .then(res => res.json())
@@ -34,8 +34,8 @@ function App() {
   const saveStudent = () => {
     const method = studentId ? "PUT" : "POST";
     const url = studentId
-      ? `http://localhost:8080/students/${studentId}`
-      : `http://localhost:8080/students`;
+      ? `https://studentmanagementsystem-backend-mxhw.onrender.com/students/${studentId}`
+      : `https://studentmanagementsystem-backend-mxhw.onrender.com/students`;
 
     fetch(url, {
       method,
@@ -48,7 +48,7 @@ function App() {
   };
 
   const deleteStudent = (id) => {
-    fetch(`http://localhost:8080/students/${id}`, {
+    fetch(`https://studentmanagementsystem-backend-mxhw.onrender.com/students/${id}`, {
       method: "DELETE"
     }).then(() => loadStudents());
   };
